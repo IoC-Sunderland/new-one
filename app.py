@@ -49,8 +49,8 @@ def sign_up():
 
         req = request.form
 
-        new_user = Users(user_id=req['user_id'],
-                         username=req['user_name'],
+        new_user = Users(user_id=req['emp_id'],
+                         user_name=req['name'],
                          dept=req['dept'],
                          email=req['email'],
                          password=req['password'])
@@ -64,5 +64,5 @@ def sign_up():
                 
     return render_template('signup.html', title = 'Sign-Up')
 
-
-app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)
